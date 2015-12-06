@@ -145,6 +145,10 @@ module.exports = function(options){
 			library = library.replace(/\\/g, "/")
 		}
 		
+		if (options.folder) {
+			library = options.folder;
+		}
+		
 		return rp.post(
 			options.site + "/_api/web/GetFolderByServerRelativeUrl('" + 
 			library +"')/Files/add(url='"+
